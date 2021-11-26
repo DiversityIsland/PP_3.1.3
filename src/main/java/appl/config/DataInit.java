@@ -4,16 +4,10 @@ import appl.models.Role;
 import appl.models.User;
 import appl.service.RoleService;
 import appl.service.UserService;
-import appl.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
 @Component
 public class DataInit {

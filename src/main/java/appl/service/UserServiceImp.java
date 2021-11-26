@@ -35,8 +35,7 @@ public class UserServiceImp implements UserService {
     @Transactional
     @Override
     public void updateUser(Long id, User updatedUser) {
-        if ((!updatedUser.getPassword().startsWith("$2a$12$")) ||
-                (updatedUser.getPassword().length() != 60)) {
+        if (!getUser(id).getPassword().equals(updatedUser.getPassword())) {
             updatedUser.setPassword(encoder.encode(updatedUser.getPassword()));
         }
         userDao.updateUser(id, updatedUser);
