@@ -14,7 +14,7 @@ public class UserController {
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String printWelcome(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        model.addAttribute("user", (User) authentication.getPrincipal());
+        model.addAttribute("a_user", (User) authentication.getPrincipal());
 
         return "user";
     }

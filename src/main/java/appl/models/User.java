@@ -38,6 +38,16 @@ public class User implements UserDetails {
 
     public User() {}
 
+    public User(Long id, String username, String password,
+                String name, String surname, Integer age) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+
     public User(String username, String password,
                 String name, String surname, Integer age) {
         this.username = username;

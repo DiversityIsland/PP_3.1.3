@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>PP_3.1.1</artifactId>
+    <artifactId>PP_3.1.2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>PP_3.1.1</name>
+    <name>PP_3.1.2</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,7 +63,7 @@
     </dependencies>
 
     <build>
-        <finalName>PP_3.1.1</finalName>
+        <finalName>PP_3.1.2</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>

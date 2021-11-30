@@ -43,6 +43,10 @@ public class Role implements GrantedAuthority {
         this.role = role;
     }
 
+    public String getSimpleRole() {
+        return role.substring(5);
+    }
+
     /*public Set<User> getUsers() {
         return users;
     }

@@ -1,30 +1,105 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Your page</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .a
+        {
+            display:inline-block;
+        }
+    </style>
 </head>
 <body>
 
-<table border="1">
-    <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>surname</th>
-        <th>age</th>
-    </tr>
-    <tr>
-        <td th:text="${user.getId()}">id</td>
-        <td th:text="${user.getName()}">name</td>
-        <td th:text="${user.getSurname()}">surname</td>
-        <td th:text="${user.getAge()}">age</td>
-    </tr>
-</table>
+<header style="height:45px; background-color:#313131; padding-top:10px">
+    <div>
+        <div class="a">
+            <h6 th:text="${a_user.getUsername()}" style="color:#FFFFFF; margin-left:35px"></h6>
+        </div>
+        <div class="a">
+            <p style="color:#FFFFFF">with roles: </p>
+        </div>
+        <div class="a">
+            <th:block th:each="role : ${a_user.getRoles()}">
+                <a style="color:#FFFFFF" th:text="${role.getSimpleRole()}">roles</a>
+            </th:block>
+        </div>
+        <div class="a" style="position:relative; float:right">
+            <a style="color:#EEEEEE; margin-right:35px" href="/logout">logout</a>
+        </div>
+    </div>
+</header>
 
-<br/>
-<hr/>
-
-<a href="/logout">Exit!</a>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col-md-2">
+            <ul class="nav nav-pills flex-column" style="margin-top:15px">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#main_tab1">User</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10" style="background-color:#F0F0F0">
+            <h3 style="padding: 10px">
+                User information-page
+            </h3>
+                        <!-- table -->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12" style="padding: 0; box-shadow: 0 0 5px rgba(0,0,0,0.5); background-color: #FFFFFF">
+                                    <header style="height:45px; background-color:#EEEEEE; padding-top: 10px">
+                                        <h6 style="padding-left:20px">
+                                            About user
+                                        </h6>
+                                    </header>
+                                    <main style="background-color:#FFFFFF; padding: 20px">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Surname</th>
+                                                <th>Age</th>
+                                                <th>Username</th>
+                                                <th>Roles</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td th:utext="${a_user.getId()}">id</td>
+                                                <td th:utext="${a_user.getName()}">name</td>
+                                                <td th:utext="${a_user.getSurname()}">surname</td>
+                                                <td th:utext="${a_user.getAge()}">age</td>
+                                                <td th:utext="${a_user.getUsername()}">username</td>
+                                                <td>
+                                                    <th:block th:each="role : ${a_user.getRoles()}">
+                                                        <a th:text="${role.getSimpleRole()}">roles</a>
+                                                    </th:block>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </main>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
