@@ -40,6 +40,8 @@ public class UserServiceImp implements UserService {
         }*/
         if (updatedUser.getPassword() == "") {
             updatedUser.setPassword(getUser(id).getPassword());
+        } else {
+            updatedUser.setPassword(encoder.encode(updatedUser.getPassword()));
         }
         userDao.updateUser(id, updatedUser);
     }

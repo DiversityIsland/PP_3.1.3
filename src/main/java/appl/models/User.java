@@ -117,6 +117,24 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
+    public String getStringRoles() {
+        StringBuilder stringRoles = new StringBuilder();
+
+        for(Role role : roles) {
+            stringRoles.append(role.getSimpleRole()).append(" ");
+        }
+
+        return new String(stringRoles);
+    }
+
+    public Boolean getUserFlag() {
+        return roles.contains(new Role("ROLE_USER"));
+    }
+
+    public Boolean getAdminFlag() {
+        return roles.contains(new Role("ROLE_ADMIN"));
+    }
+
     //
 
     @Override
